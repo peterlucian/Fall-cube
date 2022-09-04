@@ -21,7 +21,7 @@ public class Piece : MonoBehaviour
         set 
         { 
             currentPosition = value;
-            SetTransformPosition();
+            //SetTransformPosition();
             //StopCoroutine("MoveToPosition");
             //StartCoroutine("MoveToPosition", currentPosition);
         }
@@ -30,13 +30,37 @@ public class Piece : MonoBehaviour
     private Vector3 currentPosition;
 
     public Rigidbody m_Rigidbody;
+    
+    /*
+    private Collider[] childrenColliders;
+    private GameObject objectToCollide;
+    private void Start()
+    {
+
+        // adding all colliders to an array, but our collider will be added to !
+        childrenColliders = GetComponentsInChildren<Collider>();
+        objectToCollide = GameObject.Find("Cube");
+
+        foreach (Collider col in childrenColliders)
+        {
+            // checking if it is our collider, then skip it, 
+            if (col != GetComponent<Collider>())
+            {
+                // if it is not our collider then ignore collision between our collider and childs collider
+                Physics.IgnoreCollision(col, objectToCollide.GetComponent<Collider>());
+            }
+        }
+
+    }
+    */
 
     private void Start()
     {
-        m_Rigidbody = GetComponent<Rigidbody>();
+        
     }
     protected void Awake()
     {
+        m_Rigidbody = GetComponent<Rigidbody>();
         CurrentPosition = transform.localPosition;
 
     }
@@ -69,5 +93,5 @@ public class Piece : MonoBehaviour
         }
     }*/
 
-
+   
 }
