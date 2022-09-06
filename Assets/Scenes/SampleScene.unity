@@ -448,7 +448,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 100
+  far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -475,7 +475,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.09, z: -9.64}
+  m_LocalPosition: {x: 0, y: -0.97, z: -9.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -704,8 +704,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486980710}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 4, z: 1}
+  m_LocalPosition: {x: 0, y: -2.0005, z: 0}
+  m_LocalScale: {x: 1, y: 5.000282, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -756,6 +756,7 @@ MonoBehaviour:
   pieceEntirePrefab: {fileID: 7307260325014743409, guid: 3c42cd0e51cd8364aac98e16663ee577, type: 3}
   pieceHalfPrefab: {fileID: 273253623366237386, guid: 10ffe8ebbc786fe42a062781612cd6af, type: 3}
   pieceOneQuarterPrefab: {fileID: 5438899792974335837, guid: 3443a663f6f8cf4489c863da2a99ceb4, type: 3}
+  pieceOneQuarterPrefabdup: {fileID: 850478943316037237, guid: a50c36190a244684c8c2202156320d35, type: 3}
 --- !u!4 &1507180627
 Transform:
   m_ObjectHideFlags: 0

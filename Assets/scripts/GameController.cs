@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     public GameObject pieceEntirePrefab;
     public GameObject pieceHalfPrefab;
     public GameObject pieceOneQuarterPrefab;
+    public GameObject pieceOneQuarterPrefabdup;
 
     private GameObject[] piecesRand;
 
@@ -28,6 +29,7 @@ public class GameController : MonoBehaviour
         pieces.Enqueue(Instantiate(pieceEntirePrefab, cylinder).GetComponent<Piece>());
         pieces.Enqueue(Instantiate(pieceHalfPrefab, cylinder).GetComponent<Piece>());
         pieces.Enqueue(Instantiate(pieceOneQuarterPrefab, cylinder).GetComponent<Piece>());
+        pieces.Enqueue(Instantiate(pieceOneQuarterPrefabdup, cylinder).GetComponent<Piece>());
 
     }
 
@@ -81,11 +83,11 @@ public class GameController : MonoBehaviour
             GameObject pieceToInstantiate = Instantiate(piecesRand[Random.Range(0, 3)]);
 
             pieceToInstantiate.transform.parent = cylinder;
-            pieceToInstantiate.transform.localPosition = new Vector3(0, -0.5F, 0);
+            pieceToInstantiate.transform.localPosition = new Vector3(0, -1F, 0);
             pieceToInstantiate.transform.rotation = Quaternion.Euler(-90, 0, Random.Range(0, 360));
             pieceToInstantiate.transform.localScale = new Vector3(100, 100, 50);
            
-            pieceToInstantiate.GetComponent<Piece>().CurrentPosition = new Vector3(0, -0.5F, 0);
+            pieceToInstantiate.GetComponent<Piece>().CurrentPosition = new Vector3(0, -1F, 0);
             pieces.Enqueue(pieceToInstantiate.GetComponent<Piece>());
             
         }
@@ -99,7 +101,7 @@ public class GameController : MonoBehaviour
            
         foreach (Piece next in pieces)
         {
-            if (Vector3.Distance(next.transform.localPosition, next.CurrentPosition) < 0.02F)
+            if (Vector3.Distance(next.transform.localPosition, next.CurrentPosition) < 0.03F)
             {
                 //Debug.Log("inside the stop piece");
                 next.m_Rigidbody.velocity = Vector3.zero;
