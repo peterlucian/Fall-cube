@@ -7,6 +7,8 @@ public class GameController : MonoBehaviour
     private Transform cylinder;
     private Transform cube;
 
+    private CubeCollide cubeColliding;
+
     public Queue<Piece> pieces = new Queue<Piece>();
 
     public GameObject pieceEntirePrefab;
@@ -20,12 +22,13 @@ public class GameController : MonoBehaviour
     {
         cylinder = GameObject.Find("Cylinder").transform;
         cube = GameObject.Find("Cube").transform;
+        cubeColliding = GameObject.Find("Cube").GetComponent<CubeCollide>();
         piecesRand = new GameObject[3] { pieceEntirePrefab, pieceHalfPrefab, pieceOneQuarterPrefab };
     }
 
     private void Start()
     {
-
+        
         pieces.Enqueue(Instantiate(pieceEntirePrefab, cylinder).GetComponent<Piece>());
         pieces.Enqueue(Instantiate(pieceHalfPrefab, cylinder).GetComponent<Piece>());
         pieces.Enqueue(Instantiate(pieceOneQuarterPrefab, cylinder).GetComponent<Piece>());
@@ -41,9 +44,8 @@ public class GameController : MonoBehaviour
         Piece current = null;
         Piece prev = null;
         
-        if (cube.transform.position.y < 2.685F && !cube.GetComponent<CubeCollide>().colliding)
+        if (cubeColliding.colliding)
         {
-            Debug.Log("im here");
             bool notfirst = false;
 
             foreach (Piece next in pieces)
@@ -97,11 +99,11 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-
+        Vector3 sum = new Vector3(0, 0.03F, 0);
            
         foreach (Piece next in pieces)
         {
-            if (Vector3.Distance(next.transform.localPosition, next.CurrentPosition) < 0.03F)
+            if (Vector3.Distance(next.transform.localPosition, (next.CurrentPosition + sum)) < 0.03F)
             {
                 //Debug.Log("inside the stop piece");
                 next.m_Rigidbody.velocity = Vector3.zero;
