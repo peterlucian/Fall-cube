@@ -18,6 +18,7 @@ public class CubeCollide : MonoBehaviour
     {
         if (other.gameObject.tag == "Piece")
         {
+            FindObjectOfType<AudioManager>().Play("ballSound");
             Debug.Log("Colliding with piece" + other.gameObject.transform.parent.name);
             m_rb.velocity = Vector3.zero;
             m_rb.AddForce(new Vector3(0, bounce, 0), ForceMode.Impulse);
@@ -25,6 +26,7 @@ public class CubeCollide : MonoBehaviour
 
         if (other.gameObject.tag == "piecescore")
         {
+            FindObjectOfType<AudioManager>().Play("transiction");
             Debug.Log("Colliding with pieceScore" + other.gameObject.transform.parent.name);
             colliding = true;
             m_rb.velocity = Vector3.zero;        
