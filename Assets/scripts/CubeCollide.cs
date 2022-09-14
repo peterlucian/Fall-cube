@@ -9,6 +9,7 @@ public class CubeCollide : MonoBehaviour
     public UnityEvent myEvent;
     public bool colliding = false;
     public Rigidbody m_rb;
+    public UnityEvent addScore;
 
     private void Start()
     {
@@ -26,6 +27,7 @@ public class CubeCollide : MonoBehaviour
 
         if (other.gameObject.tag == "piecescore")
         {
+            addScore.Invoke();
             FindObjectOfType<AudioManager>().Play("transiction");
             Debug.Log("Colliding with pieceScore" + other.gameObject.transform.parent.name);
             colliding = true;
