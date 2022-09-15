@@ -27,6 +27,7 @@ public class CubeCollide : MonoBehaviour
 
         if (other.gameObject.tag == "piecescore")
         {
+            m_rb.useGravity = false;
             addScore.Invoke();
             FindObjectOfType<AudioManager>().Play("transiction");
             Debug.Log("Colliding with pieceScore" + other.gameObject.transform.parent.name);
@@ -52,13 +53,14 @@ public class CubeCollide : MonoBehaviour
     }
     private void Update()
     {
-       
+        /*
         if(transform.position.y < 1.158F)
         {
             m_rb.useGravity = false;
             m_rb.velocity = Vector3.zero;
 
-        }    
+        }  
+        */  
 
     }
 

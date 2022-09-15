@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -370, y: -193.9}
+  m_AnchoredPosition: {x: -386.7, y: -187.1}
   m_SizeDelta: {x: 50, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &520926667
@@ -1040,7 +1040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de00aaa89e8de9d41815ab7db35286ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pieceEntirePrefab: {fileID: 7307260325014743409, guid: 3c42cd0e51cd8364aac98e16663ee577, type: 3}
+  pieceEntirePrefab: {fileID: 3951063969422445941, guid: 0d559bcafa0c9a340aabeb02b3dc1a50, type: 3}
   pieceHalfPrefab: {fileID: 273253623366237386, guid: 10ffe8ebbc786fe42a062781612cd6af, type: 3}
   pieceOneQuarterPrefab: {fileID: 5438899792974335837, guid: 3443a663f6f8cf4489c863da2a99ceb4, type: 3}
   pieceOneQuarterPrefabdup: {fileID: 850478943316037237, guid: a50c36190a244684c8c2202156320d35, type: 3}
