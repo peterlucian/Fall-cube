@@ -8,7 +8,7 @@ public class CylinderPiece : MonoBehaviour
     void Update()
     {
         //transform.Rotate(0, (Input.GetAxis("Horizontal") * speed ), 0);
-
+        
         if(Input.touchCount == 1)
         {
             Touch screenTouch = Input.GetTouch(0);

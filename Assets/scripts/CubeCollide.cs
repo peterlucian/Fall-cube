@@ -9,7 +9,6 @@ public class CubeCollide : MonoBehaviour
     public UnityEvent myEvent;
     public bool colliding = false;
     public Rigidbody m_rb;
-    public UnityEvent addScore;
 
     private void Start()
     {
@@ -20,6 +19,7 @@ public class CubeCollide : MonoBehaviour
         if (other.gameObject.tag == "Piece")
         {
             FindObjectOfType<AudioManager>().Play("ballSound");
+            ScoreManager.removeScore();
             Debug.Log("Colliding with piece" + other.gameObject.transform.parent.name);
             m_rb.velocity = Vector3.zero;
             m_rb.AddForce(new Vector3(0, bounce, 0), ForceMode.Impulse);
@@ -28,7 +28,7 @@ public class CubeCollide : MonoBehaviour
         if (other.gameObject.tag == "piecescore")
         {
             m_rb.useGravity = false;
-            addScore.Invoke();
+            ScoreManager.addScore();
             FindObjectOfType<AudioManager>().Play("transiction");
             Debug.Log("Colliding with pieceScore" + other.gameObject.transform.parent.name);
             colliding = true;

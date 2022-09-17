@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
     public Text scoreText;
 
-    public float score;
+    public static float score;
 
     void Start()
     {
@@ -21,8 +21,13 @@ public class ScoreManager : MonoBehaviour
         PlayerPrefs.SetFloat("Score", score);
     }
 
-    public void addScore()
+    public static void addScore()
     {
         score++;
+    }
+
+    public static void removeScore()
+    {
+        score--;
     }
 }
